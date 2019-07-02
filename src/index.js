@@ -9,6 +9,7 @@ class App extends React.Component {
     state = { lat:null,errorMessage:'' };
 
     componentDidMount() {
+        console.log(process.env.TEST_ENV_VARIABLE)
         window.navigator.geolocation.getCurrentPosition(
             (position)=>{this.setState({ lat:position.coords.latitude })},
             (error)=>{this.setState({ errorMessage:error.message })}
